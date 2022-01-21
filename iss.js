@@ -1,5 +1,4 @@
 const request = require('request');
-const apiKey = "50500eb0-7a4a-11ec-8ea7-11926736b18d";
 
 const fetchMyIP = function(callback) {
   request("https://api.ipify.org/?format=json", (error, response, body) => {
@@ -21,7 +20,7 @@ const fetchMyIP = function(callback) {
 };
 
 const fetchCoordsByIP = (ip, callback) => {
-  request(`https://api.freegeoip.app/json/${ip}?apikey=${apiKey}`, (error, response, body) => {
+  request(`https://freegeoip.app/json/${ip}`, (error, response, body) => {
     if (error) {
       callback(error, null);
       return;
